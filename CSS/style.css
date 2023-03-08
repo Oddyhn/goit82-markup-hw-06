@@ -269,6 +269,11 @@ body {
 	color: var(--active-color);
 }
 
+.social {
+	display: inline-block;
+	margin-right: 80px;
+}
+
 .social > p {
 	font-weight: 500;
 	font-size: 16px;
@@ -294,6 +299,88 @@ body {
 
 .social > .media-list > li > a:is(:hover, :focus) {
 	background-color: var(--ico-bgrd-spec);
+}
+
+.subscribe-box {
+	display: flex;
+	flex-direction: column;
+}
+
+.subscribe-header {
+	margin-bottom: 16px;
+
+	font-weight: 500;
+	line-height: 1.5;
+	color: var(--background-color);
+}
+
+.user-subscribe {
+	display: flex;
+}
+
+.subscribe-mail {
+	width: 264px;
+	height: 40px;
+	margin-right: 24px;
+
+	padding: 8px 16px;
+
+	outline: none;
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+	border-radius: 4px;
+	background-color: var(--bglatter-color);
+	color: var(--background-color);
+}
+
+.subscribe-mail::placeholder {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 2;
+
+	letter-spacing: 0.04em;
+
+	color: rgba(255, 255, 255, 0.6);
+}
+
+.subscribe-btn {
+	display: inline-flex;
+
+	width: 165px;
+	height: 40px;
+
+	padding: 8px 24px;
+	background: var(--decor-color);
+	border-radius: 4px;
+	transition: background-color 250ms var(--timing-fc);
+
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 1.5;
+	letter-spacing: 0.04em;
+	color: var(--background-color);
+}
+
+.subscribe-btn::after {
+	content: "";
+	display: inline-block;
+
+	width: 24px;
+	height: 24px;
+	margin-left: 16px;
+
+	background-repeat: no-repeat;
+	background-position: left;
+	background-image: url(../image/studio/plane.svg);
+}
+
+.subscribe-btn:hover,
+.subscribe-btn:focus {
+	background-color: var(--active-color);
 }
 
 /* Studio */
@@ -711,6 +798,7 @@ body {
 
 	width: 408px;
 	height: 576px;
+	padding: 24px 24px;
 	background-color: #fcfcfc;
 	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
 	border-radius: 4px;
@@ -747,5 +835,178 @@ body {
 .modal-close:hover,
 .modal-close:focus {
 	color: var(--background-color);
+	background-color: var(--active-color);
+}
+
+.modal-title {
+	display: block;
+	margin-top: 48px;
+	text-align: center;
+
+	font-weight: 500;
+	line-height: 1.5;
+
+	color: var(--bglatter-color);
+}
+
+.modal-form {
+	display: flex;
+	flex-direction: column;
+	margin-top: 16px;
+}
+
+.modal-field {
+	margin-bottom: 8px;
+}
+
+.modal-description {
+	display: block;
+	margin-bottom: 4px;
+
+	font-size: 12px;
+	line-height: 1.17;
+	letter-spacing: 0.01em;
+
+	color: var(--ico-color);
+}
+
+.input-wrap {
+	position: relative;
+}
+
+.modal-input {
+	width: 100%;
+	height: 40px;
+
+	padding-left: 38px;
+
+	outline: none;
+	border: 1px solid var(--ico-color);
+	transition: border-color 250ms var(--timing-fc);
+	border-radius: 4px;
+
+	color: #000;
+}
+
+.input-icon {
+	position: absolute;
+	top: 50%;
+	left: 16px;
+	transform: translate(0, -50%);
+
+	width: 18px;
+	height: 24px;
+	color: var(--bglatter-color);
+	transition: color 250ms var(--timing-fc);
+}
+
+.modal-input:focus {
+	border-color: var(--active-color);
+}
+
+.modal-input:focus + .input-icon {
+	fill: var(--active-color);
+}
+
+.modal-messege {
+	resize: none;
+	width: 100%;
+	height: 120px;
+
+	padding: 8px 16px;
+	outline: none;
+	border: 1px solid var(--ico-color);
+	transition: border-color 250ms var(--timing-fc);
+	border-radius: 4px;
+
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 1.33;
+
+	letter-spacing: 0.04em;
+	color: #000;
+}
+
+.modal-messege:focus {
+	border-color: var(--active-color);
+}
+
+.modal-policy {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	margin-bottom: 24px;
+
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 1.33;
+
+	letter-spacing: 0.04em;
+
+	transition: background-color 250ms var(--timing-fc), background-image 250ms var(--timing-fc),
+		border 250ms var(--timing-fc);
+}
+
+.modal-policy::before {
+	display: block;
+	content: "";
+	width: 16px;
+	height: 16px;
+	margin-right: 8px;
+
+	border: 1.25px solid var(--bglatter-color);
+	border-radius: 2px;
+	cursor: pointer;
+}
+
+.modal-check:checked + .modal-policy::before {
+	background-image: url(../image/check.svg);
+	background-color: var(--active-color);
+	background-position: center;
+	background-repeat: no-repeat;
+
+	border-color: var(--active-color);
+}
+
+.modal-check:focus + .modal-policy::before {
+	outline: 2px solid var(--active-color);
+}
+
+.modal-policy-link {
+	transition: color 250ms var(--timing-fc), text-decoration 250ms var(--timing-fc);
+}
+
+.modal-policy-link:hover {
+	color: var(--active-color);
+	text-decoration: underline;
+}
+
+.modal-submit {
+	align-self: center;
+	padding: 16px 32px;
+
+	width: 169px;
+	height: 56px;
+
+	background: var(--decor-color);
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+	border-radius: 4px;
+
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 1.5;
+	letter-spacing: 0.04em;
+	color: var(--background-color);
+
+	transition: background-color 250ms var(--timing-fc);
+}
+
+.modal-submit:hover,
+.modal-submit:focus {
 	background-color: var(--active-color);
 }
